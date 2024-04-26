@@ -1,10 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
 using Persona;
 
-Console.WriteLine("Información del estudiante");
+Estudiante estudiante = new Estudiante();
 
-Estudiante estudiante = new Estudiante("Maria", "Apellido", 19, "Informática", 123456);
+estudiante.Obteneredad(DateTime.Now);
+
+
+
 estudiante.MostrarInfoCompleta();
-
-Console.WriteLine();
 

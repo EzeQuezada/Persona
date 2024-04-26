@@ -5,30 +5,31 @@ namespace Persona
 {
     public class Estudiante: Persona
     {
-        private string Carrera { get; set; }
-        private int Matricula { get; set; }
+        private string? Carrera { get; set; }
+        private string? Matricula { get; set; }
 
 
-        public Estudiante(string nombre, string apellido, int edad, string carrera, int matricula)
-            : base(nombre, apellido, edad)
-        {
-          
-            this.Carrera = carrera;
-            this.Matricula = matricula;
-        }
 
        
 
-        public void MostrarInfoCompleta() 
+       
+
+        public override int Obteneredad(DateTime fechnac)
+        {
+            var edad = DateTime.Now.Year - fechnac.Year;
+
+
+            return edad;
+        }
+        public void MostrarInfoCompleta()
         {
 
-            MostrarInformacion();
-            Console.WriteLine($"Carrera: {Carrera}");
-            Console.WriteLine($"Matricula: {Matricula}");
 
-
+            Console.WriteLine($"Nombre:Ezequiel {nombre}");
+            Console.WriteLine($"Apellido:Quezada {apellido}");
+            Console.WriteLine($"Carrera: Software {Carrera}");
+            Console.WriteLine($"Matricula: 2023-1021 {Matricula}");
+            Console.WriteLine($"Edad: 20 años");
         }
-
-
     }
 }
